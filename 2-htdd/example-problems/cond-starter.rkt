@@ -20,6 +20,7 @@
 ;(define (aspect-ratio img)      ;template
 ;  (... img))
 
+; with nested if's
 #;
 (define (aspect-ratio img)  
   (if (> (image-height img) (image-width img))
@@ -28,6 +29,8 @@
           "square"
           "wide")))
 
+; all conditions on the same level with cond expressions
+; this is called a "multi-armed conditional," as opposed to if, which is two-armed
 (define (aspect-ratio img)
   (cond
     [(> (image-height img) (image-width img)) "tall"]
@@ -35,3 +38,5 @@
     [else "wide"]
   )
 )
+
+; (aspect-ratio (circle 10 "solid" "pink") )
